@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import FlexDiv from './components/common/FlexDiv';
+import Tab from './components/tabs/Tab';
+import Template from './components/template/Template';
+import ColumnForm from './container/ColumnForm';
+import ConditionForm from './container/ConditionForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FlexDiv>
+      <Template>
+        <ColumnForm></ColumnForm>
+        <ConditionForm></ConditionForm>
+      </Template>
+      <Template color="blue">
+        <Tab></Tab>
+      </Template>
+    </FlexDiv>
   );
 }
 
