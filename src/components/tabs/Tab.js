@@ -36,7 +36,6 @@ const useTab = (idx, Tabs) => {
 const StyledTab = styled.div`
   cursor: pointer;
   display: flex;
-  display: flex;
   align-items: center; // 세로 중앙 정렬
   svg {
     // 아이콘

@@ -4,13 +4,15 @@ import Tab from './components/tabs/Tab';
 import Template from './components/template/Template';
 import ColumnForm from './container/ColumnForm';
 import ConditionForm from './container/ConditionForm';
+import FromContainer from './container/FromContainer';
 
 function App() {
   return (
-    <FlexDiv>
+    <FlexDiv >
       <Template>
-        <ColumnForm></ColumnForm>
-        <ConditionForm></ConditionForm>
+        <ColumnForm />
+        <FromContainer />
+        <ConditionForm />
       </Template>
       <Template color="blue">
         <Tab></Tab>

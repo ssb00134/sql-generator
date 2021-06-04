@@ -6,6 +6,7 @@ import {
   MdRemoveCircleOutline,
 } from 'react-icons/md';
 import FlexDiv from '../common/FlexDiv';
+import FlexForm from '../common/FlexForm';
 
 
 const SetUpFormBlock = styled.div`
@@ -108,52 +109,78 @@ const textMap = {
 };
 
 
-const ColumnItem =({type,column})=>{
+const ColumnItem = ({ type, column, onRemove }) => {
   return (
-    <FlexDiv >
-      {type=='condition' && <StyledCheckbox><MdCheckBoxOutlineBlank/></StyledCheckbox> }
-      <StyledText placeholder={type}  />
-      {type=='condition' &&  <StyledText placeholder={type}  /> }
-      <StyledRemove><MdRemoveCircleOutline/></StyledRemove>
+    <FlexDiv>
+      {type == 'condition' && (
+        <StyledCheckbox>
+          <MdCheckBoxOutlineBlank />
+        </StyledCheckbox>
+      )}
+      <StyledText placeholder={type} />
+      {type == 'condition' && <StyledText placeholder={type} />}
+      <StyledRemove onClick={()=>{onRemove(column.id)}}>
+        <MdRemoveCircleOutline />
+      </StyledRemove>
     </FlexDiv>
   );
-}
+};
 
-const SetUpForm = ({ type, input,columns, onInsert, onChangeInput }) => {
-  console.log('type : '+type);
+const SetUpForm = ({
+  type,
+  input,
+  columns,
+  onInsert,
+  onChangeInput,
+  onRemove,
+}) => {
   const text = textMap[type];
- 
-  const onSubmit = (e)=>{
+
+  const onSubmit = (e) => {
     e.preventDefault();
-    onInsert(input);
+    input.toUpperCase().split(/,|\s|\t|\n/).map((item)=>onInsert(item));
     onChangeInput('');
-    
-  }
-  const onChange = (e)=>{
+  };
+  const onChange = (e) => {
     onChangeInput(e.target.value);
-  }
-  
+  };
+
   return (
     <SetUpFormBlock>
       <h3>{text}를 입력하세요</h3>
-      <StyledSetupInsert value={input} onSubmit={onSubmit}>
-        <StyledInput value={input} onChange={onChange}/>
+      <FlexForm onSubmit={onSubmit}>
+        <StyledInput value={input} onChange={onChange} />
         <StyledButton>
           <MdAdd />
         </StyledButton>
-      </StyledSetupInsert>
-      
-      <FlexDiv type='col'>
-      {columns.map(column => (
+      </FlexForm>
+
+      <FlexDiv column>
+        {columns.map((column) => (
+        
           <ColumnItem
-          type={type}
-            todo={column}
-            key={column.id}
-           
+      
+      
+      
+                           type={type}
+ 
+ 
+ 
+                           column={column}
+    
+    
+    
+                                 key={column.id}
+       
+       
+       
+                     onRemove={onRemove}
+          
+          
+          
           />
         ))}
-        </FlexDiv>
-     
+      </FlexDiv>
     </SetUpFormBlock>
   );
 };

@@ -22,10 +22,13 @@ function ColumnForm({ input, columns, changeInput, insert, remove }) {
 }
 
 export default connect(
-  ({ columns }) => ({
-    input: columns.input,
-    columns: columns.columns,
-  }),
+  ({ columns }) => (
+    console.log('column connect : ' + columns.input),
+    {
+      input: columns.input,
+      columns: columns.columns,
+    }
+  ),
   {
     changeInput,
     insert,

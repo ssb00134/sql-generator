@@ -29,9 +29,10 @@ export const remove = (id) => ({
 //리듀서 함수 생성
 const initialState = {
   input: '',
+  table: '',
   columns: [
-    { id: 1, text: 'column1' },
-    { id: 2, text: 'column2' },
+    { id: 1, text: 'column1', table:  'EISHS.IIS_MST_M'  },
+    { id: 2, text: 'column2',  table:  'EISHS.IIS_MST_M' },
   ],
 };
 
@@ -46,6 +47,7 @@ function columns(state = initialState, action) {
       return {
         ...state,
         columns: state.columns.concat(action.columns),
+  
       };
     case REMOVE:
       return {

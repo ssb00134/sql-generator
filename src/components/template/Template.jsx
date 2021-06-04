@@ -3,12 +3,9 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette'
 
 const TemplateBlock = styled.div`
- 
-  height: 100%;
-  width: 50%;
   flex 1;
   border: 5px solid gray;
-  maxHeight :100vh;
+  maxHeight :100%;
 `;
 
 const Template = ({ children  }) => {
