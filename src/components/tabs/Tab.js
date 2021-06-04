@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import FlexDiv from '../common/FlexDiv';
 import Select from '../syntax/Select';
 
 const TabItems = [
@@ -9,7 +10,7 @@ const TabItems = [
   },
   {
     title: 'SELECT',
-    content: <Select></Select>,
+    content: <Select />,
   },
   {
     title: 'INSERT',
@@ -59,6 +60,11 @@ const StyledTabContent = styled.div`
   height: 100vh;
 `;
 
+const StyledTabButton = styled.button`
+  flex: 1;
+`;
+
+
 export default function Tab({ props }) {
   console.log(` tab color : ${props}`);
   const { currentItem, changeItem } = useTab(0, TabItems);
@@ -66,13 +72,13 @@ export default function Tab({ props }) {
   console.log(`currentItem.content : ${currentItem.content}`);
   return (
     <div>
-      <StyledTab>
+      <FlexDiv>
         {TabItems.map((e, index) => (
-          <button key={index} onClick={(e) => changeItem(index)}>
+          <StyledTabButton key={index} onClick={(e) => changeItem(index)}>
             {e.title}
-          </button>
+          </StyledTabButton>
         ))}
-      </StyledTab>
+      </FlexDiv>
       <StyledTabContent>{currentItem.content}</StyledTabContent>
     </div>
   );

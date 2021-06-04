@@ -21,9 +21,8 @@ function ColumnForm({ input, columns, changeInput, insert, remove }) {
   );
 }
 
-const mapDispatchToProps = () => {};
 export default connect(
-  (columns) => ({
+  ({ columns }) => ({
     input: columns.input,
     columns: columns.columns,
   }),

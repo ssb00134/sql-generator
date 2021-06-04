@@ -8,6 +8,7 @@ const TemplateBlock = styled.div`
   width: 50%;
   flex 1;
   border: 5px solid gray;
+  maxHeight :100vh;
 `;
 
 const Template = ({ children  }) => {

@@ -31,7 +31,7 @@ const initialState = {
   input: '',
   columns: [
     { id: 1, text: 'column1' },
-    { id: 1, text: 'column2' },
+    { id: 2, text: 'column2' },
   ],
 };
 

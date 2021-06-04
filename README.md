@@ -3,8 +3,13 @@
 리액트로 sql을 자동 생성하는 사이트
 
 # 폴더구조
++-- data
+        +-- train
+        +-- test
++-- jupyter
 
-...
+# 구문
+
 
 # Getting Started with Create React App
 
