@@ -23,7 +23,7 @@ function ColumnForm({ input, columns, changeInput, insert, remove }) {
 
 export default connect(
   ({ columns }) => (
-    console.log('column connect : ' + columns.input),
+    console.log('connect column inut : ' + columns.input),
     {
       input: columns.input,
       columns: columns.columns,

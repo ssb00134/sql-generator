@@ -157,27 +157,11 @@ const SetUpForm = ({
 
       <FlexDiv column>
         {columns.map((column) => (
-        
           <ColumnItem
-      
-      
-      
-                           type={type}
- 
- 
- 
-                           column={column}
-    
-    
-    
-                                 key={column.id}
-       
-       
-       
-                     onRemove={onRemove}
-          
-          
-          
+            type={type}
+            column={column}
+            key={column.id}
+            onRemove={onRemove}
           />
         ))}
       </FlexDiv>

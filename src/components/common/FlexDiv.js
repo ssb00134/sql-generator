@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 const FlexDivBlock = styled.div`
   display: flex;
-  over-flow: scroll;
+  overflowY: 'scroll';
   maxheight: 10%;
   ${(props) =>
     props.column &&
@@ -18,7 +18,7 @@ const FlexDivBlock = styled.div`
     ${(props) =>
       props.fullHeight &&
       css`
-        height:100vh
+        height: 100vh;
       `}
 `;
 
